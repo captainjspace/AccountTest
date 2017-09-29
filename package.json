@@ -1,0 +1,15 @@
+{
+  "name": "accounttest",
+  "version": "1.0.0",
+  "description": "a test account, with tests",
+  "main": "ClassAccount.js",
+  "scripts": {
+    "test": "TestClassAccount.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "AccountTest"
+  },
+  "author": "jlandman",
+  "license": "ISC"
+}
