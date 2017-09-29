@@ -22,7 +22,9 @@ class Account {
   }
 
   get balance() { return this._balance };
-  set balance(s) { console.log( this.transactionCodes.CANNOT_SET_BALANCE(this._balance)); }
+  set balance(s) {
+    console.log( this._transactionCodes.CANNOT_SET_BALANCE(this._balance));
+  }
 
   get txCodes() { return this._transactionCodes }
   get txTypes() { return this._enumTXTypes}
@@ -43,7 +45,7 @@ class Account {
     this.showBalance();
     return withdrawSuccess;
   }
-  
+
   throwInsufficientFunds(amount) {
     console.log('Transaction Cancelled: ' + this.txCodes.INSUFFICIENT_FUNDS(this.txTypes.WITHDRAW, amount, this.balance));
     return false;

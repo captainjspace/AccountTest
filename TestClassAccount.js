@@ -22,6 +22,13 @@ function test_InsufficientFunds() {
   assert(!tx, 'INSUFFICIENT_FUNDS');
   return (arguments.callee.name + ' passed');
 }
+function test_IllegalSetBalance() {
+  let balance = mAccount.balance;
+  mAccount.balance=10000000;
+  assert(balance===mAccount.balance, 'ILLEGAL attempt to manipulate balance');
+  return (arguments.callee.name + ' passed');
+}
+
 function test() {
   let bTestResults = false;
   let testResults = new Set();
@@ -30,6 +37,8 @@ function test() {
     testResults.add(test_Deposit());
     testResults.add(test_Withdraw());
     testResults.add(test_InsufficientFunds());
+    testResults.add(test_IllegalSetBalance());
+
     bTestResults = true;
   } catch (e) {
     console.log('TEST FAILED: ' + e.message);
