@@ -4,12 +4,15 @@
   "description": "a test account, with tests",
   "main": "ClassAccount.js",
   "scripts": {
-    "test": "TestClassAccount.js"
+    "test": "node TestClassAccount.js"
   },
   "repository": {
     "type": "git",
     "url": "AccountTest"
   },
   "author": "jlandman",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "gulp": "^3.9.1"
+  }
 }
